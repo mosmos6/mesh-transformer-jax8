@@ -22,13 +22,13 @@
 
   "tpu_size": 8,
 
-  "bucket": "gptjtest2",
-  "model_dir": "puurecipe",
+  "bucket": "gptjtest2dummy",
+  "model_dir": "puurecipedummy",
 
-  "train_set": "gptjtest.train.index",
+  "train_set": "gptjtest.train.indexdummy",
   "val_set": {
-    "pile": "gptjtest.val.index",
-    "owt": "gptjtest.val.index"
+    "pile": "gptjtest.val.indexdummy",
+    "owt": "gptjtest.val.indexdummy"
   },
 
   "eval_harness_tasks": [
@@ -46,7 +46,7 @@
   "ckpt_every": 500,
   "keep_every": 10000,
 
-  "name": "gptjtest",
+  "name": "gptjtestdummy",
   "wandb_project": "mesh-transformer-jax",
   "comment": ""
 }

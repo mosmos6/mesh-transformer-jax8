@@ -5,7 +5,7 @@ einops~=0.3.0
 requests~=2.27.0
 absl-py~=1.0.0
 flatbuffers~=23.5.26
-keras~=2.8.0 # changed on 28march
+keras~=2.15.0
 tensorboard~=2.15.0 # changed on 28march
 tensorflow-estimator
 jinja2~=3.0.0

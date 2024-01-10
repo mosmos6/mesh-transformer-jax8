@@ -4,7 +4,7 @@ wandb>=0.13.7,!=0.13.7
 einops~=0.3.0
 requests~=2.27.0
 absl-py~=1.0.0
-flatbuffers~=2.0.0
+flatbuffers~=23.5.26
 keras~=2.8.0 # changed on 28march
 tensorboard~=2.15.0 # changed on 28march
 tensorflow-estimator

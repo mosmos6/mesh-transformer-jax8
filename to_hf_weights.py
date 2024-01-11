@@ -381,7 +381,7 @@ def save_pytree_as_hf(
 
         x = unshard_leave(x, leave_name, old_shape, np_dtype=np_dtype)
         # remove first empty dimension and transpose.
-        x = torch.tensor(x.squeeze(0), dtype=torch_dtype).mT
+        x = torch.tensor(x.squeeze(0), dtype=torch_dtype).T
 
         # wte embedding weights/bias need to be combined since hf model has no wte.embedding.bias
         if hf_layer_id.startswith("transformer.wte"):

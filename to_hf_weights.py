@@ -309,7 +309,7 @@ def unshard_leave(
 
     # stack leave shards into single np.ndarray
     x = np.stack(leave_shards)
-    jax.numpy.array(x)
+    jax.numpy.ndarray(x)
     assert isinstance(x, jnp.ndarray)
 
     # As far as i can tell, this just re labels the dtype of arrays

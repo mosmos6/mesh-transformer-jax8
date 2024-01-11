@@ -143,7 +143,7 @@ def tree_flatten_with_names(pytree, is_leaf, path="", to_id=id):
 
 
 def tree_leaves_with_names(pytree, to_id=id):
-    leaves = jax.tree_leaves(pytree)
+    leaves = jax.tree_util.tree_leaves(pytree)
     is_leaf = lambda x: not isinstance(x, list) and to_id(x) in [
         to_id(x) for x in leaves
     ]
@@ -153,7 +153,7 @@ def tree_leaves_with_names(pytree, to_id=id):
 def get_tree_leaves_names_reduced(pytree) -> List[str]:
 
     leaves_ids = tree_leaves_with_names(pytree, to_id=id)
-    leaves = jax.tree_leaves(pytree)
+    leaves = jax.tree_util.tree_leaves(pytree)
     return [leaves_ids[id(l)] for l in leaves]
 
 
@@ -348,7 +348,7 @@ def save_pytree_as_hf(
     # Loads layers and names in reverse order to avoid loading unneeded opt_state layers
     # that are at the front of full (i.e. not slim) models.
 
-    old_leave_shapes = [old.shape for old in jax.tree_flatten(pytree)[0]]
+    old_leave_shapes = [old.shape for old in jax.tree_util.tree_flatten(pytree)[0]]
     leave_names = get_tree_leaves_names_reduced(pytree)
     del pytree
 
